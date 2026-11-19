@@ -1,6 +1,6 @@
 // Offline support. App files: network first, cache fallback. Map data from the relay: kept for use without a connection.
-const SHELL = 'kdrone-shell-v1', DATA = 'kdrone-data';
-const FILES = ['./', 'index.html', 'css/app.css', 'lib/leaflet.js', 'lib/leaflet.css', 'manifest.webmanifest', 'icons/icon.svg', 'icons/icon-180.png',
+const SHELL = 'kdrone-shell-v2', DATA = 'kdrone-data';
+const FILES = ['./', 'index.html', 'css/app.css', 'lib/leaflet.js', 'lib/leaflet.css', 'manifest.webmanifest', 'icons/icon.svg', 'icons/favicon.png', 'icons/icon-180.png',
   'js/app.js', 'js/config.js', 'js/util.js', 'js/geo.js', 'js/data.js', 'js/settings.js', 'js/check.js', 'js/map.js', 'js/panel.js', 'js/laanc.js', 'js/sun.js', 'js/wx.js', 'js/records.js', 'js/more.js'];
 
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(SHELL).then(c => Promise.allSettled(FILES.map(f => c.add(f))))); });
